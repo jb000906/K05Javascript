@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body id="bodyColor">
+    <script>
+        document.write("<h1>오전이면 lightskyblue, 오후이면 orange배경</h1>");
+        document.write("<hr>");
+
+        var date=new Date();
+
+        document.write("현재 시간:"+"&nbsp"+
+            date.getHours()+"시, "+
+            date.getMinutes()+"분, "+
+            date.getSeconds()+"초<br>");
+
+        var getColor=document.getElementById("bodyColor");     
+		
+		if(date.getHours()<=12)
+		{
+			getColor.style.backgroundColor = "lightskyblue";
+		}
+		else
+		{
+			getColor.style.backgroundColor = "orange";
+		}
+	
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table{background-color:#DDDDDD; border-radius: 10px 10px 10px 10px;
+            border-spacing: 15px;} 
+        #div1{
+            padding:50px;
+        }
+        .btn1{background-color: #70C738;width: 100px;height: 99px;font-weight: bold;
+            cursor: pointer; text-align: right; font-size: 45px; color: #373737; border: #70C738;
+            border-radius: 10px 10px 10px 10px; align-content: center;  }
+        .btn2{background-color: #7B7B7B;width: 370px;height: 75px;font-weight: bold;
+            cursor: pointer; text-align: center; font-size: 35px; color: white; border: #7B7B7B;
+            border-radius: 10px 10px 10px 10px; margin: 10px;}  
+        .btn3{background-color: #373737;width: 180px;height: 57px;font-weight: bold;
+            cursor: pointer; text-align: center; font-size: 31px; color: white; border: #373737;
+            border-radius: 10px 10px 10px 10px; }
+        .btn4{background-color: #FA960A;width: 180px;height: 57px;font-weight: bold;
+            cursor: pointer; text-align: center; font-size: 31px; color: white; border: #FA960A;
+            border-radius: 10px 10px 10px 10px; margin-right: 0px;}    
+            
+        </style>
+
+
+    <script>
+        var getInput="";
+        
+
+        function displayResult(inputNum){
+            getInput+=inputNum;
+        }
+
+        function add(inputNum){
+            if(inputNum=='='){
+                getResult();
+
+                document.getElementById("showResult").innerHTML=getInput;
+            }
+            else if(inputNum=='BackSpace'){
+                getBackSpace();
+                document.getElementById("showResult").innerHTML=getInput;
+            }
+            else if(inputNum=='C'){
+                getClear();
+                document.getElementById("showResult").innerHTML=getInput;
+            }
+            else{
+                displayResult(inputNum);
+                document.getElementById("showResult").innerHTML=getInput;
+            }
+        }
+        
+        // var operator;
+        // function calculate () {//사칙연산을 밖으로 빼봄
+        //     var secNum = parseFloat(document.getElementById("showResult").value);
+        //     var result ;
+        //     switch (operator) {
+        //         case '+' : result = Number(getInput) + Number(secNum) ; 
+        //         document.getElementById("showResult").value = result; 
+        //         break;
+        //         case '-' : result = Number(getInput) - Number(secNum) ; 
+        //         document.getElementById("showResult").value = result;
+        //         break;
+        //         case '*' : result = Number(getInput) * Number(secNum) ; 
+        //         document.getElementById("showResult").value = result;
+        //         break;
+        //         case '/' : result = Number(getInput) / Number(secNum) ; 
+        //         document.getElementById("showResult").value = result;
+        //         break;
+        //     }        
+        // }
+
+
+
+
+
+        function getResult(){
+            getInput=eval(getInput);
+        }
+        function getBackSpace(){
+
+            var inputLength=getInput.length;
+            if(inputLength==1||inputLength==0){
+                getInput=0;
+            }
+            else{
+                getInput=getInput.substring(0,inputLength-1);
+            }
+        }
+        function getBackSpace(){
+
+            var inputLength=getInput.length;
+            if(inputLength==1||inputLength==0){
+                getInput=0;
+            }
+            else{
+                getInput=getInput.substring(0,inputLength-1);
+            }
+        }
+
+        function getClear(){
+            getInput="";
+        }
+
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+     <div id="div1">
+     <table width=670>
+        <tr >
+            <td colspan="4" class="btn1" id="showResult"></td>
+        </tr>
+        <tr>
+            <td colspan="2" ><button type="button" onclick="add('BackSpace')" class="btn2">BackSpace</button></td>
+            <td colspan="2" ><button type="button" onclick="add('C')" class="btn2">C</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add(1)" class="btn3">1</button></td>
+            <td><button type="button" onclick="add(2)" class="btn3">2</button></td>
+            <td><button type="button" onclick="add(3)" class="btn3">3</button></td>
+            <td><button type="button" onclick="add('/')" class="btn4">/</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add(4)" class="btn3">4</button></td>
+            <td><button type="button" onclick="add(5)" class="btn3">5</button></td>
+            <td><button type="button" onclick="add(6)" class="btn3">6</button></td>
+            <td><button type="button" onclick="add('*')" class="btn4">x</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add(7)" class="btn3">7</button></td>
+            <td><button type="button" onclick="add(8)" class="btn3">8</button></td>
+            <td><button type="button" onclick="add(9)" class="btn3">9</button></td>
+            <td><button type="button" onclick="add('+')" class="btn4">+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add('=')" class="btn3">=</button></td>
+            <td><button type="button" onclick="add(0)" class="btn3">0</button></td>
+            <td><button type="button" onclick="add('.')" class="btn3">.</button></td>
+            <td><button type="button" onclick="add('-')" class="btn4">-</button></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
