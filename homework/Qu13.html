@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qu13</title>
     <script>
+// ki_story.html?mode=view&tname=interview&idx=520&page=1&keyfield=name&keystring=홍길동
     document.write("<h1>문자열 분할</h1>");
     document.write("<hr>");
 
-    var getString=prompt("문자열 입력");
-    var stringArr=getString.split("&");
+    var queryString=prompt("문자열 입력");
+    var stringArr=queryString.split("&");
     for(var i=0 ; i<stringArr.length ; i++){ 
         document.write(stringArr[i] +"<br/>");
     }    
