@@ -67,7 +67,7 @@
                     */
                 }
                 else{
-                    obj.options[i].text="=======";
+                    //obj.options[i].text="=======";
                 }
             }
         }
@@ -78,7 +78,7 @@
     <select id="fruit" onchange="fnSelect(this);">
     <option value="apple">사과</option>
     <option value="orange">오렌지</option>
-    <option value="mango">망고</option>
+    <option value="mango" selected>망고</option>
     <option value="banana">바나나</option>
     <option value="guaba">구아바</option>
     </select>
@@ -86,8 +86,11 @@
     <script>
         function fnSubmit(){
             //form태그 하위의 텍스트 상자의 DOM을 얻어온다.
-            var txtObj = document.subForm.txt;
+            var txtObj = document.subForm.txt;//텍스트상자의 name속성으로 접근
+            //var txtObj = document.getElementById("idTxt");//텍스트상자의 id속성으로 접근
             /*
+            //위 두가지 방식 모두 사용 가능
+
             텍스트 상자에 아무런 내용이 없는 경우 서버로 전송되지 않도록
             false를 반환한다. 반환된 값은 이벤트 핸들러 쪽으로 전달되어
             전송이 정지된다.
@@ -116,8 +119,10 @@
      -->
     <form name="subForm" action="http://ikosmo.co.kr"
         onsubmit="return fnSubmit();">
+        <!-- form태그는 name이 없으면 전달불가.
+            name이 가장 중요함 -->
     
-        <input type="text" name="txt" value="">
+        <input type="text" name="txt" id="idTxt" value="">
     
         <input type="reset" value="리셋">
     

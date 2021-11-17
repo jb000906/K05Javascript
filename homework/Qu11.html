@@ -21,12 +21,20 @@
 
         var getColor=document.getElementById("bodyColor");     
 		
-		if(date.getHours()<=12)
+		if(date.getHours()<12)
 		{
+            //오전
 			getColor.style.backgroundColor = "lightskyblue";
+            //특정 아이디를 통해 DOM을 얻어온 후 배경색 설정
+            //document.getElementById("AllWrap").style.backgroundColor="lightskyblue";
+            //div의 id를 AllWrap으로 설정했을때
+
+            //body태그 자체를 얻어온 후 배경색 설정
+            //document.body.style.backgroundColor="lightskyblue";
 		}
 		else
 		{
+            //오후
 			getColor.style.backgroundColor = "orange";
 		}
 	
